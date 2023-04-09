@@ -30,12 +30,27 @@ function generatePassword() {
   // adding the \ before the " tells the code to include the " and not end the quote
   let passwordCharacters = [];
   const specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+  const lowercaseCharacters = "a-z";
+  const uppercaseCharacters = "A-Z";
+  const numericCharacters = "1234567890";
 
   // todo handle other character types
 
   if (includeSpecialCharacters) {
     passwordCharacters = passwordCharacters.concat(specialCharacters.split(""));
    }
+
+   if (includeLowerCase) {
+    passwordCharacters = passwordCharacters.concat(lowercaseCharacters.split(""));
+   } 
+
+   if (includeUpperCase) {
+    passwordCharacters = passwordCharacters.concat(uppercaseCharacters.split(""));
+   } 
+   if (includeNumbers) {
+    passwordCharacters = passwordCharacters.concat(numericCharacters.split(""));
+   } 
+
 
 
 let results = "";
